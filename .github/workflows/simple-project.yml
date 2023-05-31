@@ -37,11 +37,14 @@ jobs:
           tg_dir: 'simple-project'
           tg_command: 'plan'
 
-  deploy :
+  deploy:
     runs-on: ubuntu-latest
     needs: [plan]
     if: github.ref == 'refs/heads/master'
     steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
       - name: Deploy
         uses: denis256/tg-gh-action@master
         with:
