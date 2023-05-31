@@ -1,3 +1,3 @@
 inputs = {
-  content = "xyz"
+  content =         "xyz"
 }
