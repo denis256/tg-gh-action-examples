@@ -1,0 +1,32 @@
+name: 'simple-project'
+
+on:
+  workflow_dispatch:
+
+env:
+  TRACE: '1'
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Plan
+        uses: denis256/tg-gh-action@master
+        with:
+          tf_version: '1.4.6'
+          tg_version: 'latest'
+          tg_dir: 'simple-project'
+          tg_command: fmt
+
+      - name: Apply
+        uses: denis256/tg-gh-action@master
+        with:
+          tf_version: '1.4.6'
+          tg_version: 'latest'
+          tg_dir: 'simple-project'
+          tg_command: apply
+
