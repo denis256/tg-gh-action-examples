@@ -1,0 +1,3 @@
+inputs = {
+        content = "fmt-example"
+}
