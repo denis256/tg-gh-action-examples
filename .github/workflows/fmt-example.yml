@@ -1,0 +1,23 @@
+name: 'fmt-example'
+
+on:
+  workflow_dispatch:
+
+env:
+  tf_version: '1.4.6'
+  tg_version: 'latest'
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Check terragrunt HCL
+        uses: denis256/tg-gh-action@master
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: 'fmt-example'
+          tg_command: 'hclfmt --diff --terragrunt-check --terragrunt-diff'
