@@ -1,0 +1,25 @@
+name: 'dependencies-project'
+
+on:
+  workflow_dispatch:
+
+env:
+  tf_version: '1.4.6'
+  tg_version: 'latest'
+  working_dir: 'dependencies-project'
+
+jobs:
+  graph-dependenices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Check terragrunt HCL
+        uses: denis256/tg-gh-action@master
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: ${{ env.working_dir }}
+          tg_command: 'graph-dependencies'
+
