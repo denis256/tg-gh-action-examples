@@ -15,7 +15,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
 
-      - name: Check terragrunt HCL
+      - name: 'Graph Dependencies'
         uses: denis256/tg-gh-action@master
         with:
           tf_version: ${{ env.tf_version }}
