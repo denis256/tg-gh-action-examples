@@ -1,4 +1,4 @@
-name: 'simple-project'
+name: 'dependencies-project'
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
 env:
   tf_version: '1.4.6'
   tg_version: 'latest'
+  working_dir: 'dependencies-project'
 
 jobs:
   checks:
@@ -19,7 +20,7 @@ jobs:
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
-          tg_dir: 'simple-project'
+          tg_dir: ${{ env.working_dir }}
           tg_command: 'hclfmt --terragrunt-check --terragrunt-diff'
 
   plan:
@@ -34,8 +35,8 @@ jobs:
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
-          tg_dir: 'simple-project'
-          tg_command: 'plan'
+          tg_dir: ${{ env.working_dir }}
+          tg_command: 'run-all plan'
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,8 +51,8 @@ jobs:
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
-          tg_dir: 'simple-project'
-          tg_command: 'apply'
+          tg_dir: ${{ env.working_dir }}
+          tg_command: 'run-all apply'
 
   destroy:
     runs-on: ubuntu-latest
@@ -66,6 +67,6 @@ jobs:
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
-          tg_dir: 'simple-project'
-          tg_command: 'destroy'
+          tg_dir: ${{ env.working_dir }}
+          tg_command: 'run-all destroy'
 
