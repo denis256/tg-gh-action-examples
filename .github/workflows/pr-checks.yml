@@ -6,6 +6,7 @@ env:
   tf_version: '1.4.6'
   tg_version: 'latest'
   working_dir: 'dependencies-project'
+  TRACE: '1'
 
 jobs:
   checks:
