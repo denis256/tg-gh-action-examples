@@ -41,6 +41,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: [plan]
+    environment: 'prod'
     if: github.ref == 'refs/heads/master'
     steps:
       - name: 'Checkout'
@@ -53,20 +54,3 @@ jobs:
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.working_dir }}
           tg_command: 'run-all apply'
-
-  destroy:
-    runs-on: ubuntu-latest
-    needs: [deploy]
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@master
-
-      - name: Deploy
-        uses: denis256/tg-gh-action@master
-        with:
-          tf_version: ${{ env.tf_version }}
-          tg_version: ${{ env.tg_version }}
-          tg_dir: ${{ env.working_dir }}
-          tg_command: 'run-all destroy'
-
