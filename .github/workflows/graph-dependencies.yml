@@ -1,4 +1,4 @@
-name: 'dependencies-project'
+name: 'graph-dependenices'
 
 on:
   workflow_dispatch:
