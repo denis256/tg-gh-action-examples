@@ -1,0 +1,24 @@
+name: 'pr-checks'
+
+on: [push, pull_request]
+
+env:
+  tf_version: '1.4.6'
+  tg_version: 'latest'
+  working_dir: 'dependencies-project'
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Run checks
+        uses: denis256/tg-gh-action@master
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: ${{ env.working_dir }}
+          tg_command: 'hclfmt --terragrunt-check --terragrunt-diff'
+          tg_comment: '1'
