@@ -12,7 +12,7 @@ dependency "module2" {
   }
 }
 
-input = {
+inputs = {
   x = "1"
   z = "xxxx"
 }
