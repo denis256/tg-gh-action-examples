@@ -4,8 +4,9 @@ on: [push, pull_request]
 
 env:
   tf_version: '1.4.6'
-  tg_version: 'latest'
+  tg_version: '0.46.3'
   working_dir: 'dependencies-project'
+  TRACE: '1'
 
 jobs:
   checks:
@@ -22,3 +23,5 @@ jobs:
           tg_dir: ${{ env.working_dir }}
           tg_command: 'hclfmt --terragrunt-check --terragrunt-diff'
           tg_comment: '1'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -6,8 +6,14 @@ dependency "module1" {
 }
 
 dependency "module2" {
-  config_path = "../module2"
-  mock_outputs = {
-    file = "mock2.txt"
+  config_path =    "../module2"
+  mock_outputs   = {
+    file   = "mock2.txt"
   }
+}
+
+input = {
+  x = "1"
+
+  z         =     "xxxx"
 }
