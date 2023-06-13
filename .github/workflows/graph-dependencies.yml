@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: 'Graph Dependencies'
-        uses: denis256/tg-gh-action@master
+        uses: denis256/tg-gh-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
