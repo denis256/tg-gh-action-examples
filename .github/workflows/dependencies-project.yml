@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Check terragrunt HCL
-        uses: denis256/tg-gh-action@v1
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Plan
-        uses: denis256/tg-gh-action@master
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Deploy
-        uses: denis256/tg-gh-action@master
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
