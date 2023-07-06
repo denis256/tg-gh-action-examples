@@ -31,7 +31,7 @@ jobs:
       - uses: PhutureCorp/container-ssh-agent@v0.0.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          home-dir: "/root"
+          home-dir: "/tmp"
 
       - name: Plan
         uses: gruntwork-io/terragrunt-action@feature/git-permissions
