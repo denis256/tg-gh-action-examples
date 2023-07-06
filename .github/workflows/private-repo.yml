@@ -47,7 +47,7 @@ jobs:
         shell: bash
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@feature/git-permissions
+        uses: gruntwork-io/terragrunt-action@v1
         env:
             SSH_AUTH_SOCK: "/github/workflow/ssh-agent.sock"
         with:
