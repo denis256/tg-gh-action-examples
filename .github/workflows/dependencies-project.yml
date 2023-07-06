@@ -50,7 +50,7 @@ jobs:
         shell: bash
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@feature/git-permissions
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
