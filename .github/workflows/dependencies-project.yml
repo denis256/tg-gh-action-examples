@@ -50,7 +50,7 @@ jobs:
         shell: bash
 
       - name: Permissions update
-        run: "chown -R root:root /home/runner/work"
+        run: "chown -R root:root /home/runner/work/tg-gh-action-examples"
         shell: bash
 
 
