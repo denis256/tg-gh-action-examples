@@ -35,15 +35,15 @@ jobs:
         run: "env"
         shell: bash
 
-      - name: Configure git to trust the workspace
-        run:
-          git config --global --add safe.directory "/github/workspace"
-
       - name: 'Checkout'
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
           submodules: true
+
+      - name: Configure git to trust the workspace
+        run:
+          git config --global --add safe.directory /github/workspace
 
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
@@ -61,6 +61,10 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@v2
+
+      - name: Configure git to trust the workspace
+        run:
+          git config --global --add safe.directory /github/workspace
 
       - name: Deploy
         uses: gruntwork-io/terragrunt-action@v1
