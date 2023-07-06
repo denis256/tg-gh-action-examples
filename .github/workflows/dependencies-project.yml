@@ -49,13 +49,8 @@ jobs:
         run: "git config --global --list"
         shell: bash
 
-      - name: Permissions update
-        run: "chown -R root:root /home/runner/work/tg-gh-action-examples"
-        shell: bash
-
-
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@feature/git-permissions
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
