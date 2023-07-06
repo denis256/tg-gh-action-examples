@@ -37,6 +37,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-auth-sock: "/home/runner/work/_temp/_github_home/ssh-agent.sock"
 
       - name: Print env 2
         run: "env"
@@ -45,9 +46,11 @@ jobs:
       - name: Plan
         uses: gruntwork-io/terragrunt-action@feature/git-permissions
         env:
-            SSH_AUTH_SOCK: $SSH_AUTH_SOCK
+            SSH_AUTH_SOCK: "/github/home/ssh-agent.sock"
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.working_dir }}
           tg_command: 'run-all plan --terragrunt-log-level debug'
+        volumes:
+          - ${{ env.SSH_AUTH_SOCK }}:/ssh-agent.sock
