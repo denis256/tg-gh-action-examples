@@ -30,8 +30,16 @@ jobs:
       - name: Git check
         run: "git --version"
         shell: bash
+
+      - name: Configure git to trust the workspace despite the different owner
+        run:
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: 'Checkout'
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
 
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
