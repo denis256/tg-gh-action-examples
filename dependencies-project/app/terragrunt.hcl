@@ -15,4 +15,6 @@ dependency "module2" {
 inputs = {
   x = "1"
   z = "xxxx"
+
+  path = get_repo_root()
 }
