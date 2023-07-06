@@ -35,9 +35,9 @@ jobs:
         run: "env"
         shell: bash
 
-      - name: Configure git to trust the workspace despite the different owner
+      - name: Configure git to trust the workspace
         run:
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory "/github/workspace"
 
       - name: 'Checkout'
         uses: actions/checkout@v2
