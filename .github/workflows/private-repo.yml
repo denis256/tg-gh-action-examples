@@ -52,5 +52,3 @@ jobs:
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.working_dir }}
           tg_command: 'run-all plan --terragrunt-log-level debug'
-        volumes:
-          - ${{ env.SSH_AUTH_SOCK }}:/ssh-agent.sock
