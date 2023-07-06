@@ -49,6 +49,11 @@ jobs:
         run: "git config --global --list"
         shell: bash
 
+      - name: Permissions update
+        run: "chmod o+r -R /github/workspace"
+        shell: bash
+
+
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
         with:
