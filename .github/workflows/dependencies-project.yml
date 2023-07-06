@@ -64,7 +64,7 @@ jobs:
 
       - name: Configure git to trust the workspace
         run:
-          git config --global --add safe.directory /github/workspace
+          git config --global --add safe.directory '*'
 
       - name: Deploy
         uses: gruntwork-io/terragrunt-action@v1
