@@ -49,6 +49,10 @@ jobs:
         run: "git config --global --list"
         shell: bash
 
+      - name: Git list
+        run: "ls -lahrt ~"
+        shell: bash
+
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
         with:
