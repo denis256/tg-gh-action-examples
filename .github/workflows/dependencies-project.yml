@@ -57,6 +57,10 @@ jobs:
         run: "cat ~/.gitconfig"
         shell: bash
 
+      - name: Print root directory
+        run: "cd ~ && pwd"
+        shell: bash
+
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
         with:
