@@ -45,6 +45,11 @@ jobs:
         run:
           git config --add safe.directory /github/workspace
 
+      - name: Configure git to trust the workspace
+        run:
+          git config url."https://username:qwe@github.com".insteadOf "https://github.com"
+
+
       - name: Git config
         run: "git config --list"
         shell: bash
