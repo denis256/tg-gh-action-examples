@@ -53,8 +53,8 @@ jobs:
         run: "ls -lahrt ~"
         shell: bash
 
-      - name: Show config
-        run: "cat ~/.gitconfig"
+      - name: Show local config
+        run: "ls -lahrt ."
         shell: bash
 
       - name: Print root directory
