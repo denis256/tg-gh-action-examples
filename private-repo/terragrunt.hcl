@@ -1,4 +1,4 @@
 terraform {
-  source = "git::git@github.com:denis256/terraform-test-module-private.git//modules/test-file?ref=v0.0.4"
+  source = "https://github.com:denis256/terraform-test-module-private.git//modules/test-file?ref=v0.0.4"
 }
 
