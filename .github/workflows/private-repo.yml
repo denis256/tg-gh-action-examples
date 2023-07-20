@@ -28,7 +28,7 @@ jobs:
         env:
             SSH_AUTH_SOCK: "/github/workflow/ssh-agent.sock"
             INPUT_PRE_EXEC_0: |
-              git config --global url."https://username:${{env.PAT_TOKEN}}@github.com".insteadOf "https://github.com"
+              git config --global url."https://denis256:${{env.PAT_TOKEN}}@github.com".insteadOf "https://github.com"
             INPUT_PRE_EXEC_1: |
               git config --global --list
             INPUT_PRE_EXEC_2: |
