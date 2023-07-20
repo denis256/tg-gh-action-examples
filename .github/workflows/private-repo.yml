@@ -42,14 +42,14 @@ jobs:
         uses: gruntwork-io/terragrunt-action@bug/git-config
         env:
             SSH_AUTH_SOCK: "/github/workflow/ssh-agent.sock"
+            INPUT_pre_exec_0: |
+              git config --global url."https://username:${{env.PAT_TOKEN}}@github.com".insteadOf "https://github.com"
+            INPUT_pre_exec_1: |
+              git config --global --list
+            INPUT_pre_exec_2: |
+              cat ~/.gitconfig
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.working_dir }}
           tg_command: 'run-all plan --terragrunt-log-level debug'
-          pre_exec_0: |
-            git config --global url."https://username:${{env.PAT_TOKEN}}@github.com".insteadOf "https://github.com"
-          pre_exec_1: |
-            git config --global --list
-          pre_exec_2: |
-            cat ~/.gitconfig
