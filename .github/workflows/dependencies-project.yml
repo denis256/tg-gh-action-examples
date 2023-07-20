@@ -63,6 +63,9 @@ jobs:
 
       - name: Plan
         uses: gruntwork-io/terragrunt-action@bug/git-config
+        run:
+          pwd
+          git config --global --list
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
