@@ -39,7 +39,7 @@ jobs:
           ssh-auth-sock: "/home/runner/work/_temp/_github_workflow/ssh-agent.sock"
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@bug/git-config
         env:
             SSH_AUTH_SOCK: "/github/workflow/ssh-agent.sock"
         with:
@@ -47,3 +47,9 @@ jobs:
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.working_dir }}
           tg_command: 'run-all plan --terragrunt-log-level debug'
+          pre_exec_0: |
+            git config --global url."https://username:${{env.PAT_TOKEN}}@github.com".insteadOf "https://github.com"
+          pre_exec_1: |
+            git config --global --list
+          pre_exec_2: |
+            cat ~/.gitconfig
