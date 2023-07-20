@@ -43,10 +43,10 @@ jobs:
 
       - name: Configure git to trust the workspace
         run:
-          git config --global --add safe.directory /github/workspace
+          git config --add safe.directory /github/workspace
 
       - name: Git config
-        run: "git config --global --list"
+        run: "git config --list"
         shell: bash
 
       - name: Git list
