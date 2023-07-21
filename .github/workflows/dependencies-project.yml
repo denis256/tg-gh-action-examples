@@ -17,6 +17,9 @@ jobs:
 
       - name: Check terragrunt HCL
         uses: gruntwork-io/terragrunt-action@bug/vars-checking
+        env:
+          INPUT_PRE_EXEC_1: |
+            git config --global --list
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
