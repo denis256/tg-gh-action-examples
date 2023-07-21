@@ -84,7 +84,7 @@ jobs:
           git config --global --add safe.directory '*'
 
       - name: Deploy
-        uses: gruntwork-io/terragrunt-action@bug/git-config
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
