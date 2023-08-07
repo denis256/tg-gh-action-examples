@@ -1,0 +1,59 @@
+name: 'remote-repo'
+
+on:
+  workflow_dispatch:
+
+env:
+  tf_version: '1.4.6'
+  tg_version: '0.46.3'
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Check terragrunt HCL
+        uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
+        env:
+          INPUT_PRE_EXEC_0: ""
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: 'remote-repo'
+          tg_command: 'hclfmt --terragrunt-check --terragrunt-diff'
+
+  plan:
+    runs-on: ubuntu-latest
+    needs: [checks]
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Plan
+        uses: gruntwork-io/terragrunt-action@v1
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: 'remote-repo'
+          tg_command: 'plan'
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 'prod'
+    needs: [plan]
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: Deploy
+        uses: gruntwork-io/terragrunt-action@v1
+        with:
+          tf_version: ${{ env.tf_version }}
+          tg_version: ${{ env.tg_version }}
+          tg_dir: 'remote-repo'
+          tg_command: 'apply'
+
+
