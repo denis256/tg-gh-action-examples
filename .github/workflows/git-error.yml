@@ -1,4 +1,4 @@
-name: 'simple-project'
+name: 'git-error'
 
 on:
   workflow_dispatch:
