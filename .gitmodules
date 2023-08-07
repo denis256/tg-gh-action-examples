@@ -1,0 +1,3 @@
+[submodule "terraform-test-module"]
+	path = terraform-test-module
+	url = https://github.com/denis256/terraform-test-module.git
