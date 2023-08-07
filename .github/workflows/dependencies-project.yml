@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Check terragrunt HCL
-        uses: gruntwork-io/terragrunt-action@bug/vars-checking
+        uses: gruntwork-io/terragrunt-action@v1
 #        env:
 #          INPUT_PRE_EXEC_1: |
 #            git config --global --list
@@ -65,7 +65,7 @@ jobs:
         shell: bash
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@bug/vars-checking
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
