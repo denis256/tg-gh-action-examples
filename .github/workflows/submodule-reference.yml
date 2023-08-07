@@ -17,6 +17,8 @@ jobs:
 
       - name: Check terragrunt HCL
         uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
+        env:
+          TF_LOG: "debug"
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
