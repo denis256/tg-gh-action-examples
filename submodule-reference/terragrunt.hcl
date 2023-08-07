@@ -4,7 +4,7 @@ terraform {
 
 
 include "file" {
-  path = "./terraform-test-module/file.hcl"
+  path = "${get_repo_root()}/terraform-test-module/file.hcl"
 }
 
 
