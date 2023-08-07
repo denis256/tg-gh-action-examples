@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-        with:
-          submodules: recursive
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
 
       - name: Check terragrunt HCL
         uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
@@ -33,8 +33,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-        with:
-          submodules: recursive
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
       - name: Plan
         uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
         with:
@@ -50,8 +50,8 @@ jobs:
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-        with:
-          submodules: recursive
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
       - name: Deploy
         uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
         with:
