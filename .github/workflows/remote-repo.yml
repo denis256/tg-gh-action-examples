@@ -40,7 +40,6 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    environment: 'prod'
     needs: [plan]
     if: github.ref == 'refs/heads/master'
     steps:
