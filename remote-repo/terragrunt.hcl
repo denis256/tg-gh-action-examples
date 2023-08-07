@@ -1,5 +1,9 @@
 terraform {
-  source = "git::https://github.com/denis256/terraform-test-module.git//modules/test-file?ref=v0.0.4"
+  source = "../terraform-test-module/modules/test-file"
+}
+
+include "file" {
+    path = "./terraform-test-module/file.hcl"
 }
 
 inputs = {
