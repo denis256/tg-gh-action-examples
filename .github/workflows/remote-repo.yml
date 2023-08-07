@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Check terragrunt HCL
-        uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -31,7 +31,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Deploy
-        uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
+        uses: gruntwork-io/terragrunt-action@v1
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
