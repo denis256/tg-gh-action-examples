@@ -3,7 +3,7 @@ terraform {
 }
 
 input = {
-  name = "test"
+  name     = "test"
   repo_dir = "${get_repo_root()}"
 
 }
