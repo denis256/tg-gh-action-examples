@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Check terragrunt HCL
-        uses: gruntwork-io/terragrunt-action@v1.0.4
+        uses: gruntwork-io/terragrunt-action@bug/git-config-resolving
         env:
           INPUT_PRE_EXEC_0: ""
         with:
