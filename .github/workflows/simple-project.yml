@@ -57,5 +57,3 @@ jobs:
           tg_dir: 'simple-project'
           tg_command: 'apply'
           tg_comment: 1
-
-
