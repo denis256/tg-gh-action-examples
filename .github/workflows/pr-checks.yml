@@ -22,7 +22,7 @@ jobs:
           tg_version: ${{ env.tg_version }}
           tg_dir: ${{ env.working_dir }}
           tg_command: 'hclfmt --terragrunt-check --terragrunt-diff'
-          tg_comment: '1'
+          tg_comment: '0'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
