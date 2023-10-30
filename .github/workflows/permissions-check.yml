@@ -1,4 +1,4 @@
-name: 'simple-project'
+name: 'permissions-check'
 
 on:
   workflow_dispatch:
