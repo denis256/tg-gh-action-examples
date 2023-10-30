@@ -18,7 +18,7 @@ jobs:
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
         env:
-          INPUT_PRE_EXEC_0: "ls -lahrt"
+          INPUT_PRE_EXEC_0: "ls -lahrt simple-project"
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -29,6 +29,6 @@ jobs:
       - name:   debug
         shell:  bash
         run: |
-          ls -lahrt
+          ls -lahrt simple-project
           whoami
 
