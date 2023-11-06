@@ -15,10 +15,17 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
 
+      - name: debug 1
+        shell:  bash
+        run: |
+          ls -lahrt -n simple-project
+          whoami
+
+
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
         env:
-          INPUT_PRE_EXEC_0: "ls -lahrt simple-project"
+          INPUT_PRE_EXEC_0: "ls -lahrt -n simple-project"
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -26,9 +33,9 @@ jobs:
           tg_command: 'plan'
           tg_comment: 1
 
-      - name:   debug
+      - name: debug 2
         shell:  bash
         run: |
-          ls -lahrt simple-project
+          ls -lahrt -n simple-project
           whoami
 
