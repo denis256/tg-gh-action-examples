@@ -38,4 +38,9 @@ jobs:
         run: |
           ls -lahrt -n simple-project
           whoami
+      - name: debug 3
+        shell:  bash
+        run: |
+          ls -lahrt -n simple-project
+          whoami
 
