@@ -65,7 +65,7 @@ jobs:
         shell: bash
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@feature/permission-update
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -87,7 +87,7 @@ jobs:
           git config --global --add safe.directory '*'
 
       - name: Deploy
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@feature/permission-update
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
