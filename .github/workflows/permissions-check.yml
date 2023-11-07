@@ -23,7 +23,7 @@ jobs:
 
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@feature/permission-update
+        uses: gruntwork-io/terragrunt-action@v1
         env:
           INPUT_PRE_EXEC_0: "ls -lahrt -n simple-project"
         with:
