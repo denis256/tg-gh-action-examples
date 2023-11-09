@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Plan
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@bug/permissions-fix-34
         env:
           INPUT_PRE_EXEC_0: |
             curl -sLO https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
