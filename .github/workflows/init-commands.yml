@@ -35,9 +35,12 @@ jobs:
         uses: gruntwork-io/terragrunt-action@bug/permissions-fix-34
         env:
           INPUT_PRE_EXEC_0: |
-            curl -sLO https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && \
-            unzip -q awscli-exe-linux-x86_64.zip && sudo ./aws/install'
+            curl -sLO https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
           INPUT_PRE_EXEC_1: |
+            unzip -q awscli-exe-linux-x86_64.zip
+          INPUT_PRE_EXEC_2: |
+            sudo ./aws/install
+          INPUT_PRE_EXEC_10: |
             git config --global --list
           INPUT_POST_EXEC_1: |
             ls -lahrt
