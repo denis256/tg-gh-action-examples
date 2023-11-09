@@ -33,24 +33,6 @@ jobs:
 
       - name: Plan
         uses: gruntwork-io/terragrunt-action@v1
-        with:
-          tf_version: ${{ env.tf_version }}
-          tg_version: ${{ env.tg_version }}
-          tg_dir: 'simple-project'
-          tg_command: 'plan'
-          tg_comment: 1
-
-  deploy:
-    runs-on: ubuntu-latest
-    environment: 'prod'
-    needs: [plan]
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@master
-
-      - name: Deploy
-        uses: gruntwork-io/terragrunt-action@bug/permissions-fix-34
         env:
           INPUT_PRE_EXEC_0: 'curl -sLO https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip && unzip -q awscli-exe-linux-x86_64.zip && ./aws/install'
           INPUT_PRE_EXEC_1: |
@@ -63,5 +45,5 @@ jobs:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
           tg_dir: 'simple-project'
-          tg_command: 'apply'
+          tg_command: 'plan'
           tg_comment: 1
