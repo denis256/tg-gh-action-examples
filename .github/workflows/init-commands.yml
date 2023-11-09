@@ -44,7 +44,7 @@ jobs:
             ls -lahrt / &&
             ls -lahrt /github &&
             ls -lahrt /github/home
-          INPUT_PRE_EXEC_10: |
+          INPUT_PRE_EXEC_4: |
             git config --global --list
           INPUT_POST_EXEC_1: |
             ls -lahrt
