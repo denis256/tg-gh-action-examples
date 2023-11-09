@@ -43,6 +43,8 @@ jobs:
             ls -lahrt
           INPUT_POST_EXEC_2: |
             pwd
+          INPUT_POST_EXEC_3: |
+            sudo whoami
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
