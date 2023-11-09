@@ -40,6 +40,10 @@ jobs:
             unzip -q awscli-exe-linux-x86_64.zip
           INPUT_PRE_EXEC_2: |
             sudo ./aws/install
+          INPUT_PRE_EXEC_3: |
+            ls -lahrt /
+            ls -lahrt /github
+            ls -lahrt /github/home
           INPUT_PRE_EXEC_10: |
             git config --global --list
           INPUT_POST_EXEC_1: |
