@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: Run checks
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@v2
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run plan
-        uses: gruntwork-io/terragrunt-action@v1
+        uses: gruntwork-io/terragrunt-action@v2
         with:
           tf_version: ${{ env.tf_version }}
           tg_version: ${{ env.tg_version }}
