@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
 
 env:
-  tf_version: '1.4.6'
-  tg_version: '0.46.3'
+  tf_version: '1.5.7'
+  tg_version: '0.53.2'
 
 jobs:
   checks:

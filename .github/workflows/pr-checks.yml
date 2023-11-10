@@ -3,8 +3,8 @@ name: 'pr-checks'
 on: [push, pull_request]
 
 env:
-  tf_version: '1.4.6'
-  tg_version: '0.46.3'
+  tf_version: '1.5.7'
+  tg_version: '0.53.2'
   working_dir: 'dependencies-project'
   TRACE: '1'
 
