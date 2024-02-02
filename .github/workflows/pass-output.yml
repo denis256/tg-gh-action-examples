@@ -49,11 +49,15 @@ jobs:
 
       - name: Plan output app1
         shell: bash
-        run: "ls -lahrt dependencies-project/app1"
+        run: "ls -lahrt dependencies-project/app"
 
       - name: Plan output module1
         shell: bash
-        run: "ls -lahrt dependencies-project/app1"
+        run: "ls -lahrt dependencies-project/module1"
+
+      - name: Plan output module2
+        shell: bash
+        run: "ls -lahrt dependencies-project/module2"
 
       - name: Apply
         uses: gruntwork-io/terragrunt-action@v2
