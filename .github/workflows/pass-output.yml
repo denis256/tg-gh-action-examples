@@ -43,6 +43,18 @@ jobs:
           tg_dir: ${{ env.working_dir }}
           tg_command: 'run-all plan -out tfplan --terragrunt-log-level debug'
 
+      - name: Tree
+        shell: bash
+        run: "tree"
+
+      - name: Plan output app1
+        shell: bash
+        run: "ls -lahrt dependencies-project/app1"
+
+      - name: Plan output module1
+        shell: bash
+        run: "ls -lahrt dependencies-project/app1"
+
       - name: Apply
         uses: gruntwork-io/terragrunt-action@v2
         with:
